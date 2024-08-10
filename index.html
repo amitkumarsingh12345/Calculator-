@@ -1,0 +1,80 @@
+html>
+  <head>
+    <style>
+          body{
+              text-align:center;
+              justify-content:center;
+              display:flex;
+          }div{
+              background-image:radial-gradient(blue,cyan,navy,skyblue);
+              width:200px;
+              height:255px;
+              padding-top:5px;
+              box-shadow:0px 0px 5px gray;  
+         }input{
+              height:30px;
+              width:40px;
+              margin-top:3px;
+              font-size:21px;
+              font-weight:bold;
+         }#t{
+              width:180px;
+              text-indent:5px;
+         }input:hover{
+              background:transparent;
+              border:none;
+              color:white;
+              box-shadow:0px 0px 2px gray;
+         }b{
+           color:white;
+           fontsize:20px;
+           line-height:25px;
+         }#eq{
+           width:85px;
+         }
+    </style>
+       <script>
+            function fun(x){
+               if(x.value == '='){
+                   t.value = eval(t.value);
+               }else if((x.value == '+' || x.value == '-' || x.value == '*' || x.value ==   '/' || x.value == '%' || x.value == '=') && (ch == '+' || ch == '-' || ch == '*' || ch ==   '/' || ch == '%' || ch == '=')){
+                   t.value = str.substr(0,((str.length)-1));
+                   t.value += x.value;
+               }else if(x.value == 'x'){
+                   t.value = str.substr(0,((str.length)-1));
+               }else if(x.value == 'AC'){
+                  t.value = "";  
+               }else{
+                  t.value += x.value; 
+               }str = t.value;
+                ch = str.charAt((str.length)-1);
+            }
+       </script>
+  </head>
+  <body>
+    <div>
+      <b>Calculator</b>
+      <input type="text" id="t" name="t" placeholder="Amitkumarsingh
+      "><br><br>
+      <input type="button" value="AC" onClick = "fun(this)">
+      <input type="button" value="+" onClick = "fun(this)">
+      <input type="button" value="-" onClick = "fun(this)">
+      <input type="button" value="*" onClick = "fun(this)"><br>
+      <input type="button" value="1" onClick = "fun(this)">
+      <input type="button" value="2" onClick = "fun(this)">
+      <input type="button" value="3" onClick = "fun(this)">
+      <input type="button" value="/" onClick = "fun(this)"><br>
+      <input type="button" value="4" onClick = "fun(this)">
+      <input type="button" value="5" onClick = "fun(this)">
+      <input type="button" value="6" onClick = "fun(this)">
+      <input type="button" value="%" onClick = "fun(this)"><br>
+      <input type="button" value="7" onClick = "fun(this)">
+      <input type="button" value="8" onClick = "fun(this)">
+      <input type="button" value="9" onClick = "fun(this)">
+      <input type="button" value="x" onClick = "fun(this)"><br>
+        <input type="button" value="0" onClick = "fun(this)">
+      <input type="button" id = "eq" value="=" onClick = "fun(this)">
+      <input type="button" value="." onClick = "fun(this)">
+    </div>  
+  </body>  
+</html>
